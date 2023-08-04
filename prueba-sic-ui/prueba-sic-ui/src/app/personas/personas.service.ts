@@ -7,8 +7,6 @@ import { Observable } from 'rxjs/internal/Observable';
   providedIn: 'root'
 })
 export class PersonasService {
-  
-
   constructor(private http: HttpClient) { }
 
   public obtenerPersonas():Observable<any> {

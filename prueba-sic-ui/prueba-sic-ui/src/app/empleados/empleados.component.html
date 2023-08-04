@@ -1,1 +1,81 @@
-<p>empleados works!</p>
+<div>
+    <p>Listado de empleados</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Id. Empleado</th>
+            <th>Id. Persona</th>
+            <th>Tipo de Identificacion</th>
+            <th>Numero de Identificacion</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>E-mail</th>
+            <th>Dependencia</th>
+            <th>Fecha de ingreso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let empleado of empleados">
+            <th>{{ empleado.idEmpleado }}</th>
+            <th>{{ empleado.persona.idPersona }}</th>
+            <td>{{ empleado.persona.tipoIdentificacion }}</td>
+            <td>{{ empleado.persona.numeroIdentificacion }}</td>
+            <td>{{ empleado.persona.nombres }}</td>
+            <td>{{ empleado.persona.apellidos }}</td>
+            <td>{{ empleado.persona.telefono }}</td>
+            <td>{{ empleado.persona.direccion }}</td>
+            <td>{{ empleado.persona.email }}</td>
+            <td>{{ empleado.dependencia }}</td>
+            <td>{{ empleado.fechaIngreso }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div>
+    {{mensaje}}
+</div>
+<div>
+    <p>Crear empleado</p>
+    <div>
+        <span>Tipo de identificación</span>
+        <span><input type="text" [(ngModel)]='tipoIdentificacion' /></span>
+    </div>
+    <div>
+        <span>Número de identificación</span>
+        <span><input type="text" [(ngModel)]='numeroIdentificacion' /></span>
+    </div>
+    <div>
+        <span>Nombres</span>
+        <span><input type="text" [(ngModel)]='nombres' /></span>
+    </div>
+    <div>
+        <span>Apellidos</span>
+        <span><input type="text" [(ngModel)]='apellidos' /></span>
+    </div>
+    <div>
+        <span>Teléfono</span>
+        <span><input type="text" [(ngModel)]='telefono' /></span>
+    </div>
+    <div>
+        <span>Dirección</span>
+        <span><input type="text" [(ngModel)]='direccion' /></span>
+    </div>
+    <div>
+        <span>E-mail</span>
+        <span><input type="text" [(ngModel)]='email' /></span>
+    </div>
+    <div>
+        <span>Dependencia</span>
+        <span><input type="text" [(ngModel)]='dependencia' /></span>
+    </div>
+    <div>
+        <span>Fecha de ingreso</span>
+        <span><input type="text" [(ngModel)]='fechaIngreso' /></span>
+    </div>
+    <div>
+        <button (click)="guardarEmpleado()">Guardar</button>
+    </div>
+</div>
+

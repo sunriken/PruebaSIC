@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmpleadosComponent } from './empleados.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -9,7 +11,12 @@ import { EmpleadosComponent } from './empleados.component';
     EmpleadosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule,
+    FormsModule,
+  ],
+  exports: [
+    EmpleadosComponent
   ]
 })
 export class EmpleadosModule { }

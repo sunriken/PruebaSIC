@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { PersonasModule } from './personas/personas.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { EmpleadosModule } from './empleados/empleados.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    PersonasModule
+    PersonasModule,
+    EmpleadosModule
   ],
   exports: [
     AppComponent,

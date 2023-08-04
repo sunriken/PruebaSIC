@@ -52,6 +52,6 @@ export class PersonasComponent {
       (error) => {
         this.mensaje = error;
       }
-    );;
+    );
   }
 }
