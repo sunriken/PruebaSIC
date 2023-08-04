@@ -31,7 +31,7 @@ public class TramiteService {
 	@Autowired
 	private TramiteRepository tramiteRepository;
 	
-	private void ingresarTramite(TramiteDto infoTramite) throws Exception {
+	public void ingresarTramite(TramiteDto infoTramite) throws Exception {
 		Optional<Tramite> tramiteOpt = tramiteRepository.findByNumeroTramite(infoTramite.getNumeroTramite());
 		if(tramiteOpt.isPresent()) {
 			throw new Exception("El tramite ya existe");
@@ -55,7 +55,7 @@ public class TramiteService {
 		}
 	}
 	
-	private TramiteDto consultarTramite(String numeroTramite) throws Exception {
+	public TramiteDto consultarTramite(String numeroTramite) throws Exception {
 		Optional<Tramite> tramiteOpt = tramiteRepository.findByNumeroTramite(numeroTramite);
 		if(tramiteOpt.isEmpty()) throw new Exception ("El trámite no existe");
 		Tramite tramite = tramiteOpt.get();
@@ -63,7 +63,7 @@ public class TramiteService {
 		return tramiteDto;
 	}
 	
-	private List<TramiteDto> obtenerTramites() throws Exception {
+	public List<TramiteDto> obtenerTramites() throws Exception {
 		List<TramiteDto> tramitesDto = new ArrayList<>();
 		tramiteRepository.findAll().forEach(tramite -> {
 			tramitesDto.add(Mapper.getInstance().mapTramiteToTramiteDto(tramite));

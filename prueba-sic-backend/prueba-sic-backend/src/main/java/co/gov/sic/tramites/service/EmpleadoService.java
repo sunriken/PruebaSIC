@@ -25,7 +25,7 @@ public class EmpleadoService {
 	@Autowired
 	private PersonaRepository personaRepository;
 	
-	private void ingresarEmpleado(EmpleadoDto infoEmpleado) throws Exception {
+	public void ingresarEmpleado(EmpleadoDto infoEmpleado) throws Exception {
 		Optional<Empleado> empleadoOpt = empleadoRepository.findByTipoAndNumeroIdentificacion(infoEmpleado.getPersona().getTipoIdentificacion(), infoEmpleado.getPersona().getNumeroIdentificacion());
 		if(empleadoOpt.isPresent()) {
 			throw new Exception("El empleado ya existe");
@@ -50,7 +50,7 @@ public class EmpleadoService {
 		
 	}
 	
-	private EmpleadoDto consultarEmpleado(String tipoIdentificacion, String numeroIdentificacion) throws Exception {
+	public EmpleadoDto consultarEmpleado(String tipoIdentificacion, String numeroIdentificacion) throws Exception {
 		Optional<Empleado> empleadoOpt = empleadoRepository.findByTipoAndNumeroIdentificacion(tipoIdentificacion, numeroIdentificacion);
 		if(empleadoOpt.isEmpty()) throw new Exception ("El empleado no existe");
 		Empleado empleado = empleadoOpt.get();
@@ -58,7 +58,7 @@ public class EmpleadoService {
 		return empleadoDto;
 	}
 	
-	private List<EmpleadoDto> obtenerEmpleados() throws Exception {
+	public List<EmpleadoDto> obtenerEmpleados() throws Exception {
 		List<EmpleadoDto> empleadosDto = new ArrayList<>();
 		empleadoRepository.findAll().forEach(empleado -> {
 			empleadosDto.add(Mapper.getInstance().mapEmpleadoToEmpleadoDto(empleado));

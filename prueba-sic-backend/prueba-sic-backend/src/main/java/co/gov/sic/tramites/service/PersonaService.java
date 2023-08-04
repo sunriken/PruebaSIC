@@ -19,7 +19,7 @@ public class PersonaService {
 	@Autowired
 	private PersonaRepository personaRepository;
 	
-	private void ingresarPersona(PersonaDto infoPersona) throws Exception {
+	public void ingresarPersona(PersonaDto infoPersona) throws Exception {
 		if(personaRepository
 				.findByTipoAndNumeroIdentificacion(infoPersona.getTipoIdentificacion(), infoPersona.getNumeroIdentificacion()).isPresent()){
 			throw new Exception("La persona ya existe.");
@@ -30,7 +30,7 @@ public class PersonaService {
 		}
 	}
 	
-	private PersonaDto consultarPersona(String tipoIdentificacion, String numeroIdentificacion) throws Exception {
+	public PersonaDto consultarPersona(String tipoIdentificacion, String numeroIdentificacion) throws Exception {
 		Optional<Persona> personaOpt = personaRepository.findByTipoAndNumeroIdentificacion(tipoIdentificacion, numeroIdentificacion);
 		if(personaOpt.isEmpty()) throw new Exception ("La persona no existe");
 		Persona persona = personaOpt.get();
@@ -38,7 +38,7 @@ public class PersonaService {
 		return personaDto;
 	}
 	
-	private List<PersonaDto> obtenerPersonas() throws Exception {
+	public List<PersonaDto> obtenerPersonas() throws Exception {
 		List<PersonaDto> personasDto = new ArrayList<>();
 		personaRepository.findAll().forEach(persona -> {
 			personasDto.add(Mapper.getInstance().mapPersonaToPersonaDto(persona));
