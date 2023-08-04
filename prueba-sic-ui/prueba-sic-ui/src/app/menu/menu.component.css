@@ -1,0 +1,6 @@
+.divmenu {
+    width:100%;
+    overflow: auto;
+    overflow-y: hidden;
+    display:inline;
+}

@@ -1,0 +1,67 @@
+<div>
+    <p>Listado de personas</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Id. Persona</th>
+            <th>Tipo de Identificacion</th>
+            <th>Numero de Identificacion</th>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Teléfono</th>
+            <th>Dirección</th>
+            <th>E-mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let persona of personas">
+            <th>{{ persona.idPersona }}</th>
+            <td>{{ persona.tipoIdentificacion }}</td>
+            <td>{{ persona.numeroIdentificacion }}</td>
+            <td>{{ persona.nombres }}</td>
+            <td>{{ persona.apellidos }}</td>
+            <td>{{ persona.telefono }}</td>
+            <td>{{ persona.direccion }}</td>
+            <td>{{ persona.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div>
+    {{mensaje}}
+</div>
+<div>
+    <p>Crear persona</p>
+    <div>
+        <span>Tipo de identificación</span>
+        <span><input type="text" [(ngModel)]='tipoIdentificacion' /></span>
+    </div>
+    <div>
+        <span>Número de identificación</span>
+        <span><input type="text" [(ngModel)]='numeroIdentificacion' /></span>
+    </div>
+    <div>
+        <span>Nombres</span>
+        <span><input type="text" [(ngModel)]='nombres' /></span>
+    </div>
+    <div>
+        <span>Apellidos</span>
+        <span><input type="text" [(ngModel)]='apellidos' /></span>
+    </div>
+    <div>
+        <span>Teléfono</span>
+        <span><input type="text" [(ngModel)]='telefono' /></span>
+    </div>
+    <div>
+        <span>Dirección</span>
+        <span><input type="text" [(ngModel)]='direccion' /></span>
+    </div>
+    <div>
+        <span>E-mail</span>
+        <span><input type="text" [(ngModel)]='email' /></span>
+    </div>
+    <div>
+        <button (click)="guardarPersona()">Guardar</button>
+    </div>
+</div>
+
