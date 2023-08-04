@@ -1,1 +1,64 @@
-<p>tramites works!</p>
+<div>
+    <p>Listado de tramites</p>
+    <table>
+        <thead>
+          <tr>
+            <th>Id. Tramite</th>
+            <th>Número de trámite</th>
+            <th>Año de radicación</th>
+            <th>Nombre de trámite</th>
+            <th>Descripción</th>
+            <th>Id. Persona Radicación</th>
+            <th>Tipo de Identificacion P. Radicación</th>
+            <th>Numero de Identificacion P. Radicación</th>
+            <th>Nombres P. Radicación</th>
+            <th>Apellidos P. Radicación</th>
+            <th>Teléfono P. Radicación</th>
+            <th>Dirección P. Radicación</th>
+            <th>E-mail P. Radicación</th>
+            <th>Id. Empleado Funcionario Recibió</th>
+            <th>Id. Persona F. Recibió</th>
+            <th>Tipo de Identificacion F. Recibió</th>
+            <th>Numero de Identificacion F. Recibió</th>
+            <th>Nombres F. Recibió</th>
+            <th>Apellidos F. Recibió</th>
+            <th>Teléfono F. Recibió</th>
+            <th>Dirección F. Recibió</th>
+            <th>E-mail F. Recibió</th>
+            <th>Dependencia F. Recibió</th>
+            <th>Fecha de ingreso F. Recibió</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tramite of tramites">
+            <td>{{ tramite.idTramite }}</td>
+            <td>{{ tramite.numeroTramite }}</td>
+            <td>{{ tramite.anioRadicacion }}</td>
+            <td>{{ tramite.nombreTramite }}</td>
+            <td>{{ tramite.descripcion }}</td>
+            <td>{{ tramite.personaRadicacion.idPersona }}</td>
+            <td>{{ tramite.personaRadicacion.tipoIdentificacion }}</td>
+            <td>{{ tramite.personaRadicacion.numeroIdentificacion }}</td>
+            <td>{{ tramite.personaRadicacion.nombres }}</td>
+            <td>{{ tramite.personaRadicacion.apellidos }}</td>
+            <td>{{ tramite.personaRadicacion.telefono }}</td>
+            <td>{{ tramite.personaRadicacion.direccion }}</td>
+            <td>{{ tramite.personaRadicacion.email }}</td>
+            <th>{{ tramite.funcionarioRecibio.idEmpleado }}</th>
+            <th>{{ tramite.funcionarioRecibio.persona.idPersona }}</th>
+            <td>{{ tramite.funcionarioRecibio.persona.tipoIdentificacion }}</td>
+            <td>{{ tramite.funcionarioRecibio.persona.numeroIdentificacion }}</td>
+            <td>{{ tramite.funcionarioRecibio.persona.nombres }}</td>
+            <td>{{ tramite.funcionarioRecibio.persona.apellidos }}</td>
+            <td>{{ tramite.funcionarioRecibio.persona.telefono }}</td>
+            <td>{{ tramite.funcionarioRecibio.persona.direccion }}</td>
+            <td>{{ tramite.funcionarioRecibio.persona.email }}</td>
+            <td>{{ tramite.funcionarioRecibio.dependencia }}</td>
+            <td>{{ tramite.funcionarioRecibio.fechaIngreso }}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
+<div>
+    {{mensaje}}
+</div>

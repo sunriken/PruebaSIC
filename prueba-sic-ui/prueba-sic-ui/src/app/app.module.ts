@@ -8,6 +8,7 @@ import { PersonasModule } from './personas/personas.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { EmpleadosModule } from './empleados/empleados.module';
+import { TramitesModule } from './tramites/tramites.module';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { EmpleadosModule } from './empleados/empleados.module';
     HttpClientModule,
     FormsModule,
     PersonasModule,
-    EmpleadosModule
+    EmpleadosModule,
+    TramitesModule
   ],
   exports: [
     AppComponent,
